@@ -149,7 +149,7 @@ export default function DemoAccessPage() {
               <span className="text-sm font-bold text-slate-800">45 Detik</span>
             </div>
             <div className="flex flex-col items-center text-center justify-center p-3 sm:p-4 rounded-2xl bg-white/50 border border-white/80 shadow-sm backdrop-blur-md">
-              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Batas Pengguna/QR</span>
+              <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Batas Pengguna per QR</span>
               <span className="text-sm font-bold text-slate-800">10 Orang</span>
             </div>
           </div>
