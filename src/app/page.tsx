@@ -38,7 +38,11 @@ export default function Home() {
   }, []);
 
   // URL hardcoded sesuai permintaan
-  const targetUrl = `https://ai-healthcare-platform.vercel.app/verify?token=${token}`;
+  const baseUrl = typeof window !== 'undefined' 
+  ? `${window.location.protocol}//${window.location.host}` 
+  : 'https://ai-healthcare-platform.vercel.app';
+
+  const targetUrl = `${baseUrl}/verify?token=${token}`;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50">
