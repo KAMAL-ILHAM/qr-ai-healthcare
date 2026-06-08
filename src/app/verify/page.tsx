@@ -29,7 +29,14 @@ function VerifyContent() {
 
         if (res.ok) {
           setStatus('success');
-          setMessage(data.message);
+          // Pesan diubah agar pengguna tahu mereka akan dialihkan
+          setMessage('Akses Diterima! Mengalihkan ke halaman utama...'); 
+          
+          // Fitur Redirect Otomatis: Pindah ke URL target setelah jeda 1,5 detik
+          setTimeout(() => {
+            window.location.href = 'https://ai-healthcare-platform.vercel.app/';
+          }, 1500);
+
         } else {
           setStatus('error');
           setMessage(data.error);
