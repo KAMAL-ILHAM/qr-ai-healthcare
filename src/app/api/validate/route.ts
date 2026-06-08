@@ -22,7 +22,7 @@ export async function POST(req: Request) {
     const count = await redis.incr(key);
 
     // 3. Validasi Kuota: Maksimal 10 pengguna
-    if (count > 10) {
+    if (count > 5) {
       return NextResponse.json({ 
         error: 'Kuota akses QR Code telah penuh. Silakan tunggu QR Code berikutnya.' 
       }, { status: 429 }); // 429 Too Many Requests

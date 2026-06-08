@@ -24,7 +24,7 @@ const FloatingIconCard = ({ children, delay, duration, positionClasses }: { chil
 
 export default function DemoAccessPage() {
   const [token, setToken] = useState<string>('');
-  const [timeLeft, setTimeLeft] = useState<number>(30);
+  const [timeLeft, setTimeLeft] = useState<number>(45);
   const [baseUrl, setBaseUrl] = useState<string>('');
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function DemoAccessPage() {
       const res = await fetch('/api/qr');
       const data = await res.json();
       setToken(data.token);
-      setTimeLeft(30);
+      setTimeLeft(45);
     } catch (error) {
       console.error('Gagal memuat token QR');
     }
@@ -46,7 +46,7 @@ export default function DemoAccessPage() {
 
   useEffect(() => {
     fetchNewToken();
-    const tokenInterval = setInterval(fetchNewToken, 30000);
+    const tokenInterval = setInterval(fetchNewToken, 45000);
     const countdownInterval = setInterval(() => {
       setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
     }, 1000);
@@ -146,7 +146,7 @@ export default function DemoAccessPage() {
           <div className="w-full grid grid-cols-2 gap-3 md:gap-4 mt-6">
             <div className="flex flex-col items-center text-center justify-center p-3 sm:p-4 rounded-2xl bg-white/50 border border-white/80 shadow-sm backdrop-blur-md">
               <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Masa Berlaku</span>
-              <span className="text-sm font-bold text-slate-800">30 Detik</span>
+              <span className="text-sm font-bold text-slate-800">45 Detik</span>
             </div>
             <div className="flex flex-col items-center text-center justify-center p-3 sm:p-4 rounded-2xl bg-white/50 border border-white/80 shadow-sm backdrop-blur-md">
               <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5">Batas Pengguna</span>
@@ -163,7 +163,7 @@ export default function DemoAccessPage() {
             <div className="h-1.5 w-full bg-slate-200/50 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-500 transition-all duration-1000 ease-linear rounded-full"
-                style={{ width: `${(timeLeft / 30) * 100}%`, backgroundSize: '200% 100%' }}
+                style={{ width: `${(timeLeft / 45) * 100}%`, backgroundSize: '200% 100%' }}
               />
             </div>
           </div>

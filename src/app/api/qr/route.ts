@@ -6,7 +6,7 @@ export async function GET() {
   const token = crypto.randomUUID();
   
   // Simpan di Redis dengan inisialisasi jumlah akses = 0, dan expired dalam 30 detik
-  await redis.set(`qr_token:${token}`, 0, { ex: 30 });
+  await redis.set(`qr_token:${token}`, 0, { ex: 45 });
   
   return NextResponse.json({ token });
 }
